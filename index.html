@@ -441,71 +441,59 @@
       transform: none;
     }
 
-    /* =============================================
-       FULLSCREEN PDF MODAL
-       ============================================= */
     .cert-modal-backdrop {
       position: fixed;
       inset: 0;
       z-index: 2000;
-      background: rgba(28,31,23,0.92);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(28,31,23,0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5vh 1.5vw;
+      padding: 2rem;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.35s ease;
     }
     .cert-modal-backdrop.open {
       opacity: 1;
       pointer-events: all;
     }
     .cert-modal {
+      background: var(--cream);
+      max-width: 740px;
       width: 100%;
-      height: 100%;
-      background: #fff;
-      position: relative;
+      max-height: 90vh;
       overflow: hidden;
-      transform: scale(0.94);
-      opacity: 0;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+      display: flex;
+      flex-direction: column;
     }
     .cert-modal-backdrop.open .cert-modal {
-      transform: scale(1);
-      opacity: 1;
+      transform: none;
     }
-
-    /* Header — floating overlay di atas PDF */
     .cert-modal-header {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem 1.25rem;
-      background: rgba(255,255,255,0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      pointer-events: none;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--cream-dark);
+      flex-shrink: 0;
     }
-    .cert-modal-header > * { pointer-events: all; }
-
     .cert-modal-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1rem;
+      font-size: 1.15rem;
       color: var(--olive-dark);
       line-height: 1.3;
     }
     .cert-modal-subtitle {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: var(--muted);
       letter-spacing: 0.06em;
-      margin-top: 0.1rem;
+      margin-top: 0.2rem;
     }
     .cert-modal-close {
       width: 36px;
@@ -513,17 +501,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0,0,0,0.04);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 8px;
+      background: none;
+      border: 1px solid rgba(74,92,58,0.15);
       cursor: pointer;
       flex-shrink: 0;
       transition: background 0.2s, border-color 0.2s;
       -webkit-tap-highlight-color: transparent;
     }
     .cert-modal-close:hover {
-      background: rgba(0,0,0,0.08);
-      border-color: rgba(0,0,0,0.15);
+      background: rgba(74,92,58,0.08);
+      border-color: var(--olive-light);
     }
     .cert-modal-close svg {
       width: 16px;
@@ -533,12 +520,13 @@
       fill: none;
     }
 
-    /* PDF area — fills the entire modal */
+    /* — PDF viewer area — */
     .cert-modal-pdf-wrap {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background: #525659;
+      flex: 1;
+      min-height: 0;
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
     }
     .cert-modal-pdf-wrap iframe {
       width: 100%;
@@ -546,8 +534,6 @@
       border: none;
       display: block;
     }
-
-    /* Fallback when iframe can't show PDF */
     .cert-modal-pdf-fallback {
       display: none;
       flex-direction: column;
@@ -556,26 +542,25 @@
       gap: 1.2rem;
       padding: 3rem 2rem;
       text-align: center;
-      width: 100%;
       height: 100%;
-      background: var(--cream-dark);
+      min-height: 280px;
     }
     .cert-modal-pdf-fallback.show {
       display: flex;
     }
     .cert-modal-pdf-fallback svg {
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       stroke: var(--olive-light);
       stroke-width: 1.2;
       fill: none;
       opacity: 0.5;
     }
     .cert-modal-pdf-fallback p {
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 340px;
+      max-width: 320px;
     }
     .cert-modal-pdf-fallback a {
       display: inline-flex;
@@ -584,84 +569,77 @@
       background: var(--olive);
       color: var(--cream);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.8rem 1.8rem;
+      padding: 0.75rem 1.6rem;
       transition: background 0.2s;
     }
     .cert-modal-pdf-fallback a:hover { background: var(--olive-mid); }
 
-    /* Footer — floating overlay di bawah PDF */
     .cert-modal-footer {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 10;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.65rem 1.25rem;
-      background: rgba(255,255,255,0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      pointer-events: none;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      border-top: 1px solid var(--cream-dark);
+      flex-shrink: 0;
     }
-    .cert-modal-footer > * { pointer-events: all; }
-
     .cert-modal-meta {
       display: flex;
       flex-direction: column;
-      gap: 0.1rem;
+      gap: 0.2rem;
     }
     .cert-modal-meta-label {
-      font-size: 0.62rem;
+      font-size: 0.68rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--olive-light);
     }
     .cert-modal-meta-value {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       color: var(--olive-dark);
       font-weight: 400;
     }
     .cert-modal-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
       background: var(--olive);
       color: var(--cream);
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.4rem 0.85rem;
+      padding: 0.5rem 1rem;
       font-weight: 500;
     }
     .cert-modal-badge svg {
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       fill: var(--cream);
     }
+    /* Download button in footer */
     .cert-modal-download {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
       background: var(--olive-dark);
       color: var(--cream);
       text-decoration: none;
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.4rem 0.85rem;
+      padding: 0.5rem 1rem;
       font-weight: 500;
       transition: background 0.2s;
-      border-radius: 0;
     }
     .cert-modal-download:hover { background: var(--olive); }
     .cert-modal-download svg {
-      width: 13px;
-      height: 13px;
+      width: 14px;
+      height: 14px;
       stroke: var(--cream);
       stroke-width: 2;
       fill: none;
@@ -669,12 +647,8 @@
     .cert-modal-footer-actions {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
-
-    /* =============================================
-       END FULLSCREEN PDF MODAL
-       ============================================= */
 
     #education {
       background: var(--cream);
@@ -868,17 +842,15 @@
 
       .section-title { margin-bottom: 2.5rem; }
 
-      /* Modal — truly fullscreen on mobile */
-      .cert-modal-backdrop { padding: 0; }
-      .cert-modal-header { padding: 0.6rem 0.85rem; }
-      .cert-modal-title { font-size: 0.88rem; }
-      .cert-modal-subtitle { font-size: 0.65rem; }
-      .cert-modal-close { width: 32px; height: 32px; }
-      .cert-modal-footer { padding: 0.5rem 0.85rem; }
-      .cert-modal-footer-actions { gap: 0.35rem; }
-      .cert-modal-badge { font-size: 0.6rem; padding: 0.35rem 0.65rem; }
-      .cert-modal-download { font-size: 0.62rem; padding: 0.35rem 0.65rem; }
-      .cert-modal-meta-value { font-size: 0.75rem; }
+      .cert-modal-backdrop { padding: 0.75rem; }
+      .cert-modal { max-height: 92vh; }
+      .cert-modal-header { padding: 1.2rem 1.5rem; }
+      .cert-modal-footer { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .cert-modal-title { font-size: 1.05rem; }
+      .cert-modal-pdf-wrap { min-height: 50vh; }
+      .cert-modal-pdf-fallback { min-height: 220px; padding: 2rem 1.5rem; }
+      .cert-modal-footer-actions { width: 100%; }
+      .cert-modal-download { flex: 1; justify-content: center; }
     }
 
     @media (max-width: 420px) {
@@ -891,6 +863,11 @@
       .stat-num { font-size: 1.6rem; }
       .cert-grid { gap: 1rem; }
       .cert-card { padding: 1.4rem 1.2rem; }
+
+      .cert-modal-backdrop { padding: 0.5rem; }
+      .cert-modal-header { padding: 1rem 1.2rem; }
+      .cert-modal-footer { padding: 1rem 1.2rem; }
+      .cert-modal-title { font-size: 0.95rem; }
       .cert-modal-pdf-fallback svg { width: 40px; height: 40px; }
       .mobile-menu a { font-size: 1.3rem; }
     }
@@ -1062,11 +1039,9 @@
   </div>
 </section>
 
-<!-- Fullscreen PDF Modal -->
+<!-- Certificate Modal -->
 <div class="cert-modal-backdrop" id="certModal">
   <div class="cert-modal" id="certModalContent">
-
-    <!-- Header overlay -->
     <div class="cert-modal-header">
       <div>
         <div class="cert-modal-title" id="modalTitle">—</div>
@@ -1077,9 +1052,10 @@
       </button>
     </div>
 
-    <!-- PDF — fills entire modal -->
+    <!-- PDF Viewer Area -->
     <div class="cert-modal-pdf-wrap" id="modalPdfWrap">
       <iframe id="modalPdfIframe" title="Certificate PDF"></iframe>
+      <!-- Fallback shown when iframe can't load PDF -->
       <div class="cert-modal-pdf-fallback" id="modalPdfFallback">
         <svg viewBox="0 0 24 24">
           <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
@@ -1088,7 +1064,7 @@
           <line x1="16" y1="17" x2="8" y2="17"/>
           <polyline points="10 9 9 9 8 9"/>
         </svg>
-        <p>PDF preview is not available in this browser. Download the certificate to view it.</p>
+        <p>PDF preview is not available in this browser. You can download the certificate to view it.</p>
         <a id="modalPdfFallbackLink" href="#" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
@@ -1100,7 +1076,6 @@
       </div>
     </div>
 
-    <!-- Footer overlay -->
     <div class="cert-modal-footer">
       <div class="cert-modal-meta">
         <span class="cert-modal-meta-label">Issued by</span>
@@ -1117,7 +1092,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -1166,8 +1140,7 @@
 
 <script>
   /* ==========================================
-     Certificate data
-     Ganti path PDF di bawah sesuai file kamu
+     Certificate data — ubah path PDF di sini
      ========================================== */
   const certData = [
     {
@@ -1175,62 +1148,50 @@
       subtitle: 'Score 650 · 2024',
       issuer: 'TOEIC English Test',
       badge: 'Verified',
-      pdf: './TOIEC_M.AHSAN NASRULLOH001.pdf'
+      // 👇 Ganti dengan nama file PDF-mu yang sebenarnya
+      pdf: './cert-toeic.pdf'
     },
     {
       title: 'Mandarin HSK 1',
       subtitle: 'A1 TOCFL Level',
       issuer: 'Mandarin HSK Test',
       badge: 'Verified',
-      pdf: './SERTIFIKATJUARA_1UMUM_M.AHSAN NASRULLOH001.pdf'
+      pdf: './cert-hsk1.pdf'
     },
     {
       title: 'SQL Advanced',
       subtitle: 'HackerRank · 2024',
       issuer: 'HackerRank',
       badge: 'Verified',
-      pdf: './sql_advancedcertificate.pdf'
+      pdf: './cert-sql-advanced.pdf'
     },
     {
       title: 'SQL Intermediate',
       subtitle: 'HackerRank · 2024',
       issuer: 'HackerRank',
       badge: 'Verified',
-      pdf: './sql_intermediatecertificate.pdf'
+      pdf: './cert-sql-intermediate.pdf'
     }
   ];
 
   /* ==========================================
-     Modal elements
+     Modal logic
      ========================================== */
-  const modalBackdrop    = document.getElementById('certModal');
-  const modalContent     = document.getElementById('certModalContent');
-  const modalTitle       = document.getElementById('modalTitle');
-  const modalSubtitle    = document.getElementById('modalSubtitle');
-  const modalIssuer      = document.getElementById('modalIssuer');
-  const modalBadge       = document.getElementById('modalBadge');
-  const modalCloseBtn    = document.getElementById('certModalClose');
-  const modalPdfIframe   = document.getElementById('modalPdfIframe');
-  const modalPdfWrap     = document.getElementById('modalPdfWrap');
-  const modalPdfFallback = document.getElementById('modalPdfFallback');
-  const modalFallbackLink= document.getElementById('modalPdfFallbackLink');
-  const modalDownloadLink= document.getElementById('modalDownloadLink');
+  const modalBackdrop   = document.getElementById('certModal');
+  const modalContent    = document.getElementById('certModalContent');
+  const modalTitle      = document.getElementById('modalTitle');
+  const modalSubtitle   = document.getElementById('modalSubtitle');
+  const modalIssuer     = document.getElementById('modalIssuer');
+  const modalBadge      = document.getElementById('modalBadge');
+  const modalCloseBtn   = document.getElementById('certModalClose');
+  const modalPdfIframe  = document.getElementById('modalPdfIframe');
+  const modalPdfWrap    = document.getElementById('modalPdfWrap');
+  const modalPdfFallback= document.getElementById('modalPdfFallback');
+  const modalFallbackLink = document.getElementById('modalPdfFallbackLink');
+  const modalDownloadLink = document.getElementById('modalDownloadLink');
   let modalOpen = false;
   let iframeTimeout = null;
 
-  /* ==========================================
-     Append #view=Fit agar PDF auto-fit viewport
-     ========================================== */
-  function pdfUrlWithViewFit(url) {
-    if (!url) return '';
-    // Hilangkan fragment lama jika ada
-    const clean = url.split('#')[0];
-    return clean + '#view=Fit';
-  }
-
-  /* ==========================================
-     Open modal
-     ========================================== */
   function openModal(index) {
     const cert = certData[index];
     if (!cert) return;
@@ -1242,7 +1203,7 @@
 
     const pdfPath = cert.pdf || '';
 
-    // Download link
+    // Set download link (selalu tampilkan agar user bisa download)
     if (pdfPath) {
       modalDownloadLink.href = pdfPath;
       modalDownloadLink.style.display = '';
@@ -1251,28 +1212,35 @@
       modalDownloadLink.style.display = 'none';
     }
 
-    // Reset
-    modalPdfIframe.src = 'about:blank';
+    // Reset state
+    modalPdfIframe.src = '';
     modalPdfFallback.classList.remove('show');
     modalPdfIframe.style.display = 'block';
 
     if (pdfPath) {
-      // Set iframe src dengan #view=Fit agar PDF auto-zoom sesuai layar
-      modalPdfIframe.src = pdfUrlWithViewFit(pdfPath);
+      // Coba load PDF via iframe
+      // Beberapa browser (terutama mobile) tidak bisa render PDF di iframe,
+      // jadi kita set timeout untuk menampilkan fallback.
+      modalPdfIframe.src = pdfPath;
 
-      // Deteksi fallback: jika 3 detik iframe tidak render PDF
       if (iframeTimeout) clearTimeout(iframeTimeout);
       iframeTimeout = setTimeout(() => {
+        // Jika setelah 3 detik iframe masih kosong/tidak load, tampilkan fallback
+        // Ini adalah deteksi sederhana — browser yang support PDF akan sudah menampilkan isinya
+        // Kita coba akses contentDocument, jika error artinya tidak bisa load
         try {
           const doc = modalPdfIframe.contentDocument;
+          // Jika bisa diakses dan body kosong, berarti PDF tidak di-render sebagai embed
           if (doc && doc.body && doc.body.innerHTML === '') {
             showFallback();
           }
         } catch (e) {
-          // Cross-origin = PDF sedang di-load oleh viewer bawaan browser → OK
+          // Cross-origin error — kemungkinan PDF sedang di-load oleh browser PDF viewer
+          // Ini sebenarnya berarti berhasil, jadi biarkan saja
         }
       }, 3000);
     } else {
+      // Tidak ada PDF — tampilkan placeholder
       showFallback();
     }
 
@@ -1283,14 +1251,14 @@
 
   function showFallback() {
     modalPdfIframe.style.display = 'none';
-    const hasAnyPdf = certData.some(c => c.pdf);
-    if (!hasAnyPdf) {
+    if (!certData.some(c => c.pdf)) {
+      // Jika tidak ada PDF sama sekali, ubah teks fallback
       modalPdfFallback.querySelector('p').textContent =
         'No certificate file has been added yet.';
       modalFallbackLink.style.display = 'none';
     } else {
       modalPdfFallback.querySelector('p').textContent =
-        'PDF preview is not available in this browser. Download the certificate to view it.';
+        'PDF preview is not available in this browser. You can download the certificate to view it.';
       modalFallbackLink.style.display = '';
     }
     modalPdfFallback.classList.add('show');
@@ -1301,9 +1269,9 @@
     modalOpen = false;
     modalBackdrop.classList.remove('open');
     document.body.classList.remove('modal-open');
-    // Bersihkan iframe setelah animasi tutup selesai
+    // Bersihkan iframe setelah animasi selesai
     setTimeout(() => {
-      modalPdfIframe.src = 'about:blank';
+      modalPdfIframe.src = '';
     }, 400);
     if (iframeTimeout) clearTimeout(iframeTimeout);
   }
@@ -1338,7 +1306,7 @@
   reveals.forEach((el) => obs.observe(el));
 
   /* ==========================================
-     Nav shadow
+     Nav shadow on scroll
      ========================================== */
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
