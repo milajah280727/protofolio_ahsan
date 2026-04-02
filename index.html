@@ -109,10 +109,7 @@
       pointer-events: none;
       transition: opacity 0.35s ease;
     }
-    .mobile-menu.open {
-      opacity: 1;
-      pointer-events: all;
-    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
     .mobile-menu a {
       text-decoration: none;
       font-family: 'DM Serif Display', serif;
@@ -122,10 +119,7 @@
       transform: translateY(16px);
       transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s;
     }
-    .mobile-menu.open a {
-      opacity: 1;
-      transform: none;
-    }
+    .mobile-menu.open a { opacity: 1; transform: none; }
     .mobile-menu a:hover { color: var(--accent); }
     .mobile-menu a:nth-child(1) { transition-delay: 0.05s; }
     .mobile-menu a:nth-child(2) { transition-delay: 0.1s; }
@@ -186,10 +180,7 @@
       line-height: 1.1;
       margin-bottom: 1.5rem;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-desc {
       font-size: 0.95rem;
       line-height: 1.8;
@@ -198,11 +189,7 @@
       margin-bottom: 2.5rem;
       font-weight: 300;
     }
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .hero-cta {
       display: inline-flex;
       align-items: center;
@@ -245,7 +232,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: saturate(1) brightness(1);
     }
     .hero-photo-overlay {
       position: absolute;
@@ -289,10 +275,7 @@
       gap: 2rem;
       margin-top: 3rem;
     }
-    .stat {
-      border-top: 2px solid var(--olive-light);
-      padding-top: 1rem;
-    }
+    .stat { border-top: 2px solid var(--olive-light); padding-top: 1rem; }
     .stat-num {
       font-family: 'DM Serif Display', serif;
       font-size: 2.2rem;
@@ -300,17 +283,9 @@
       line-height: 1;
       margin-bottom: 0.3rem;
     }
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
+    .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .skill-chip {
       background: var(--cream-dark);
       border: 1px solid rgba(74,92,58,0.15);
@@ -333,18 +308,10 @@
       flex-shrink: 0;
     }
 
-    #experience {
-      background: var(--olive-dark);
-      color: var(--cream);
-    }
+    #experience { background: var(--olive-dark); color: var(--cream); }
     #experience .section-title { color: var(--cream); }
 
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 800px;
-    }
+    .timeline { display: flex; flex-direction: column; gap: 0; max-width: 800px; }
     .timeline-item {
       display: grid;
       grid-template-columns: 180px 1fr;
@@ -382,11 +349,7 @@
     }
 
     #certificates { background: var(--cream-dark); }
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
+    .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .cert-card {
       background: var(--cream);
       border: 1px solid rgba(74,92,58,0.12);
@@ -401,9 +364,7 @@
       box-shadow: 0 12px 32px rgba(46,58,36,0.1);
       border-color: var(--olive-light);
     }
-    .cert-card:active {
-      transform: translateY(-1px) scale(0.98);
-    }
+    .cert-card:active { transform: translateY(-1px) scale(0.98); }
     .cert-icon {
       width: 40px;
       height: 40px;
@@ -421,11 +382,7 @@
       margin-bottom: 0.4rem;
       line-height: 1.3;
     }
-    .cert-year {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
+    .cert-year { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
     .cert-hint {
       margin-top: 1rem;
       font-size: 0.68rem;
@@ -436,68 +393,66 @@
       transform: translateY(4px);
       transition: opacity 0.25s, transform 0.25s;
     }
-    .cert-card:hover .cert-hint {
-      opacity: 1;
-      transform: none;
-    }
+    .cert-card:hover .cert-hint { opacity: 1; transform: none; }
 
+    /* =============================================
+       CERTIFICATE MODAL — sized to PDF ratio
+       ============================================= */
     .cert-modal-backdrop {
       position: fixed;
       inset: 0;
       z-index: 2000;
-      background: rgba(28,31,23,0.82);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(28,31,23,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1.5rem;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.35s ease;
     }
-    .cert-modal-backdrop.open {
-      opacity: 1;
-      pointer-events: all;
-    }
+    .cert-modal-backdrop.open { opacity: 1; pointer-events: all; }
+
     .cert-modal {
       background: var(--cream);
-      max-width: 740px;
-      width: 100%;
-      max-height: 90vh;
-      overflow: hidden;
       position: relative;
-      transform: translateY(24px) scale(0.97);
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
       display: flex;
       flex-direction: column;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.04);
+      transform: translateY(28px) scale(0.96);
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+      /* width set by JS */
     }
-    .cert-modal-backdrop.open .cert-modal {
-      transform: none;
-    }
+    .cert-modal-backdrop.open .cert-modal { transform: none; }
+
     .cert-modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
+      padding: 1.1rem 1.5rem;
       border-bottom: 1px solid var(--cream-dark);
       flex-shrink: 0;
+      background: var(--cream);
     }
     .cert-modal-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       color: var(--olive-dark);
       line-height: 1.3;
     }
     .cert-modal-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--muted);
       letter-spacing: 0.06em;
-      margin-top: 0.2rem;
+      margin-top: 0.15rem;
     }
     .cert-modal-close {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -505,62 +460,73 @@
       border: 1px solid rgba(74,92,58,0.15);
       cursor: pointer;
       flex-shrink: 0;
+      border-radius: 6px;
       transition: background 0.2s, border-color 0.2s;
       -webkit-tap-highlight-color: transparent;
     }
-    .cert-modal-close:hover {
-      background: rgba(74,92,58,0.08);
-      border-color: var(--olive-light);
-    }
-    .cert-modal-close svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--charcoal);
-      stroke-width: 2;
-      fill: none;
-    }
+    .cert-modal-close:hover { background: rgba(74,92,58,0.08); border-color: var(--olive-light); }
+    .cert-modal-close svg { width: 15px; height: 15px; stroke: var(--charcoal); stroke-width: 2; fill: none; }
 
-    /* — PDF viewer area — */
+    /* PDF viewer area — aspect-ratio set by JS */
     .cert-modal-pdf-wrap {
-      flex: 1;
-      min-height: 0;
-      background: var(--cream-dark);
+      width: 100%;
+      background: #ddd9d0;
       position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
     .cert-modal-pdf-wrap iframe {
       width: 100%;
       height: 100%;
       border: none;
       display: block;
+      background: #fff;
     }
+
+    /* Loading pulse while PDF loads */
+    .cert-modal-pdf-wrap.is-loading::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, #ddd9d0 30%, #e8e4db 50%, #ddd9d0 70%);
+      background-size: 200% 100%;
+      animation: shimmer 1.6s ease infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Fallback when iframe can't show PDF */
     .cert-modal-pdf-fallback {
       display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.2rem;
-      padding: 3rem 2rem;
+      gap: 1rem;
+      padding: 2.5rem 2rem;
       text-align: center;
-      height: 100%;
-      min-height: 280px;
+      position: absolute;
+      inset: 0;
+      background: var(--cream-dark);
+      z-index: 2;
     }
-    .cert-modal-pdf-fallback.show {
-      display: flex;
-    }
+    .cert-modal-pdf-fallback.show { display: flex; }
     .cert-modal-pdf-fallback svg {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       stroke: var(--olive-light);
       stroke-width: 1.2;
       fill: none;
-      opacity: 0.5;
+      opacity: 0.45;
     }
     .cert-modal-pdf-fallback p {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 320px;
+      max-width: 300px;
     }
     .cert-modal-pdf-fallback a {
       display: inline-flex;
@@ -569,87 +535,71 @@
       background: var(--olive);
       color: var(--cream);
       text-decoration: none;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.75rem 1.6rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 4px;
       transition: background 0.2s;
     }
     .cert-modal-pdf-fallback a:hover { background: var(--olive-mid); }
 
     .cert-modal-footer {
-      padding: 1.5rem 2rem;
+      padding: 0.9rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.6rem;
       border-top: 1px solid var(--cream-dark);
       flex-shrink: 0;
+      background: var(--cream);
     }
-    .cert-modal-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
+    .cert-modal-meta { display: flex; flex-direction: column; gap: 0.15rem; }
     .cert-modal-meta-label {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--olive-light);
     }
-    .cert-modal-meta-value {
-      font-size: 0.88rem;
-      color: var(--olive-dark);
-      font-weight: 400;
-    }
-    .cert-modal-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--olive);
-      color: var(--cream);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.5rem 1rem;
-      font-weight: 500;
-    }
-    .cert-modal-badge svg {
-      width: 14px;
-      height: 14px;
-      fill: var(--cream);
-    }
-    /* Download button in footer */
+    .cert-modal-meta-value { font-size: 0.85rem; color: var(--olive-dark); font-weight: 400; }
+    .cert-modal-footer-actions { display: flex; align-items: center; gap: 0.5rem; }
     .cert-modal-download {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       background: var(--olive-dark);
       color: var(--cream);
       text-decoration: none;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.9rem;
       font-weight: 500;
+      border-radius: 4px;
       transition: background 0.2s;
     }
     .cert-modal-download:hover { background: var(--olive); }
-    .cert-modal-download svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--cream);
-      stroke-width: 2;
-      fill: none;
-    }
-    .cert-modal-footer-actions {
-      display: flex;
+    .cert-modal-download svg { width: 13px; height: 13px; stroke: var(--cream); stroke-width: 2; fill: none; }
+    .cert-modal-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.35rem;
+      background: var(--olive);
+      color: var(--cream);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.85rem;
+      font-weight: 500;
+      border-radius: 4px;
     }
+    .cert-modal-badge svg { width: 12px; height: 12px; fill: var(--cream); }
 
+    /* =============================================
+       EDUCATION
+       ============================================= */
     #education {
       background: var(--cream);
       display: grid;
@@ -657,11 +607,7 @@
       gap: 5rem;
       align-items: center;
     }
-    .edu-block {
-      background: var(--olive-dark);
-      color: var(--cream);
-      padding: 3rem;
-    }
+    .edu-block { background: var(--olive-dark); color: var(--cream); padding: 3rem; }
     .edu-block .school {
       font-family: 'DM Serif Display', serif;
       font-size: 1.6rem;
@@ -675,11 +621,7 @@
       text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
-    .edu-block .edu-date {
-      font-size: 0.8rem;
-      color: rgba(245,242,235,0.5);
-      margin-bottom: 1.8rem;
-    }
+    .edu-block .edu-date { font-size: 0.8rem; color: rgba(245,242,235,0.5); margin-bottom: 1.8rem; }
     .award {
       display: flex;
       align-items: flex-start;
@@ -688,18 +630,10 @@
       border-left: 3px solid var(--accent);
       padding: 1rem 1.2rem;
     }
-    .award-text {
-      font-size: 0.88rem;
-      line-height: 1.5;
-      color: rgba(245,242,235,0.8);
-    }
+    .award-text { font-size: 0.88rem; line-height: 1.5; color: rgba(245,242,235,0.8); }
 
     .skills-col .section-title { margin-bottom: 1.5rem; }
-    .personal-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
+    .personal-skills { display: flex; flex-wrap: wrap; gap: 0.7rem; }
     .personal-skill {
       border: 1px solid var(--olive-light);
       color: var(--olive);
@@ -711,6 +645,9 @@
     }
     .personal-skill:hover { background: var(--olive); color: var(--cream); }
 
+    /* =============================================
+       CONTACT
+       ============================================= */
     #contact {
       background: var(--olive-dark);
       color: var(--cream);
@@ -726,12 +663,7 @@
       font-size: 0.95rem;
       font-weight: 300;
     }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .contact-link {
       display: inline-flex;
       align-items: center;
@@ -780,11 +712,11 @@
       transform: translateY(24px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal.visible { opacity: 1; transform: none; }
 
+    /* =============================================
+       RESPONSIVE
+       ============================================= */
     @media (max-width: 1024px) {
       nav { padding: 0 2.5rem; }
       section { padding: 5rem 2.5rem; }
@@ -811,12 +743,8 @@
       .hero h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
       .hero-desc { max-width: 100%; font-size: 0.9rem; }
       .hero-ctas { flex-direction: column; }
-      .hero-cta, .hero-cta-ghost {
-        width: 100%; justify-content: center; padding: 1rem 1.5rem;
-      }
-      .hero-photo-col {
-        height: 45vh; min-height: 280px; order: -1; margin-top: var(--nav-h);
-      }
+      .hero-cta, .hero-cta-ghost { width: 100%; justify-content: center; padding: 1rem 1.5rem; }
+      .hero-photo-col { height: 45vh; min-height: 280px; order: -1; margin-top: var(--nav-h); }
       .hero-photo-overlay {
         background: linear-gradient(to bottom, rgba(46,58,36,0.15) 0%, rgba(46,58,36,0.7) 85%, var(--olive-dark) 100%);
       }
@@ -825,7 +753,6 @@
       .about-stats { gap: 1.5rem; }
       .stat-num { font-size: 1.8rem; }
       .skills-grid { grid-template-columns: 1fr; }
-
       .timeline-item { grid-template-columns: 1fr; gap: 0.6rem; padding: 2rem 0; }
 
       #education { grid-template-columns: 1fr; gap: 3rem; }
@@ -835,22 +762,42 @@
       .personal-skill { padding: 0.45rem 1rem; font-size: 0.78rem; }
 
       #contact { padding: 4rem 1.5rem; }
-      .contact-links {
-        flex-direction: column; align-items: center; gap: 0.75rem;
-      }
+      .contact-links { flex-direction: column; align-items: center; gap: 0.75rem; }
       .contact-link { width: 100%; justify-content: center; max-width: 340px; }
-
       .section-title { margin-bottom: 2.5rem; }
 
-      .cert-modal-backdrop { padding: 0.75rem; }
-      .cert-modal { max-height: 92vh; }
-      .cert-modal-header { padding: 1.2rem 1.5rem; }
-      .cert-modal-footer { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; }
-      .cert-modal-title { font-size: 1.05rem; }
-      .cert-modal-pdf-wrap { min-height: 50vh; }
-      .cert-modal-pdf-fallback { min-height: 220px; padding: 2rem 1.5rem; }
-      .cert-modal-footer-actions { width: 100%; }
-      .cert-modal-download { flex: 1; justify-content: center; }
+      /* Modal — mobile: near full-screen, scrollable */
+      .cert-modal-backdrop {
+        padding: 0;
+        align-items: flex-end;
+        background: rgba(28,31,23,0.9);
+      }
+      .cert-modal {
+        border-radius: 14px 14px 0 0;
+        max-height: 96vh;
+        overflow-y: auto;
+        width: 100% !important;
+      }
+      .cert-modal-header { padding: 0.9rem 1.2rem; }
+      .cert-modal-title { font-size: 0.95rem; }
+      .cert-modal-subtitle { font-size: 0.68rem; }
+      .cert-modal-close { width: 32px; height: 32px; }
+      .cert-modal-pdf-wrap {
+        aspect-ratio: unset !important;
+        min-height: 55vh;
+      }
+      .cert-modal-pdf-fallback { min-height: 55vh; padding: 2rem 1.5rem; }
+      .cert-modal-pdf-fallback svg { width: 40px; height: 40px; }
+      .cert-modal-footer {
+        padding: 0.8rem 1.2rem;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .cert-modal-footer-actions {
+        justify-content: space-between;
+      }
+      .cert-modal-download,
+      .cert-modal-badge { flex: 1; justify-content: center; }
     }
 
     @media (max-width: 420px) {
@@ -863,13 +810,8 @@
       .stat-num { font-size: 1.6rem; }
       .cert-grid { gap: 1rem; }
       .cert-card { padding: 1.4rem 1.2rem; }
-
-      .cert-modal-backdrop { padding: 0.5rem; }
-      .cert-modal-header { padding: 1rem 1.2rem; }
-      .cert-modal-footer { padding: 1rem 1.2rem; }
-      .cert-modal-title { font-size: 0.95rem; }
-      .cert-modal-pdf-fallback svg { width: 40px; height: 40px; }
       .mobile-menu a { font-size: 1.3rem; }
+      .cert-modal-pdf-fallback p { font-size: 0.8rem; }
     }
 
     body.menu-open,
@@ -888,9 +830,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
 </nav>
 
@@ -907,10 +847,7 @@
   <div class="hero-text">
     <div class="hero-eyebrow">Full-Stack Developer & Sales Professional</div>
     <h1>Muhammad<br/><em>Ahsan</em><br/>Nasrulloh</h1>
-    <p class="hero-desc">
-      Highly motivated individual with a passion for IT innovations, cross-cultural communication,
-      and building an international career.
-    </p>
+    <p class="hero-desc">Highly motivated individual with a passion for IT innovations, cross-cultural communication, and building an international career.</p>
     <div class="hero-ctas">
       <a href="#contact" class="hero-cta">Get in touch</a>
       <a href="#experience" class="hero-cta-ghost">View work</a>
@@ -926,32 +863,13 @@
   <div class="about-left reveal">
     <div class="section-label">About Me</div>
     <h2 class="section-title">Bridging Technology<br/>& Communication</h2>
-    <p>
-      I am a highly motivated individual with a strong passion for exploring information technology innovations
-      and continuously mastering the latest industry trends. My interest in foreign languages enables effective
-      cross-cultural communication and supports collaboration in international environments.
-    </p>
-    <p style="margin-top:1rem;">
-      I am driven to build an international career while expanding my professional network globally —
-      blending full-stack development experience with hands-on B2B sales expertise.
-    </p>
+    <p>I am a highly motivated individual with a strong passion for exploring information technology innovations and continuously mastering the latest industry trends. My interest in foreign languages enables effective cross-cultural communication and supports collaboration in international environments.</p>
+    <p style="margin-top:1rem;">I am driven to build an international career while expanding my professional network globally — blending full-stack development experience with hands-on B2B sales expertise.</p>
     <div class="about-stats">
-      <div class="stat">
-        <div class="stat-num">2+</div>
-        <div class="stat-label">Years of Experience</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">650</div>
-        <div class="stat-label">TOEIC Score</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">1st</div>
-        <div class="stat-label">ITSSFB 2024 Award</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">4+</div>
-        <div class="stat-label">Certifications</div>
-      </div>
+      <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years of Experience</div></div>
+      <div class="stat"><div class="stat-num">650</div><div class="stat-label">TOEIC Score</div></div>
+      <div class="stat"><div class="stat-num">1st</div><div class="stat-label">ITSSFB 2024 Award</div></div>
+      <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Certifications</div></div>
     </div>
   </div>
   <div class="about-right reveal" style="transition-delay:0.15s">
@@ -979,11 +897,7 @@
       <div>
         <div class="timeline-role">Sales Representative</div>
         <div class="timeline-company">PT Mika Kreasi Furnindo · Contract</div>
-        <p class="timeline-desc">
-          Handled B2B clients and managed sales activities through Alibaba and Indotrading platforms.
-          Responsible for building lead prospects and monitoring sales performance using OKKI CRM,
-          with WeCom as the main workstation for daily communication and coordination.
-        </p>
+        <p class="timeline-desc">Handled B2B clients and managed sales activities through Alibaba and Indotrading platforms. Responsible for building lead prospects and monitoring sales performance using OKKI CRM, with WeCom as the main workstation for daily communication and coordination.</p>
       </div>
     </div>
     <div class="timeline-item reveal" style="transition-delay:0.1s">
@@ -991,10 +905,7 @@
       <div>
         <div class="timeline-role">Fullstack Developer</div>
         <div class="timeline-company">Universitas Logistik &amp; Bisnis Internasional · Internship</div>
-        <p class="timeline-desc">
-          Six-month internship as a full-stack developer at ULBI, developing the web application "Sibiko" —
-          a counseling platform for university and high school students in need.
-        </p>
+        <p class="timeline-desc">Six-month internship as a full-stack developer at ULBI, developing the web application "Sibiko" — a counseling platform for university and high school students in need.</p>
       </div>
     </div>
   </div>
@@ -1005,33 +916,25 @@
   <h2 class="section-title reveal">Certificates &amp; Awards</h2>
   <div class="cert-grid">
     <div class="cert-card reveal" data-cert="0">
-      <div class="cert-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L20 8.09v7.82L12 19.82l-8-3.91V8.09L12 4.18z"/></svg>
-      </div>
+      <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L20 8.09v7.82L12 19.82l-8-3.91V8.09L12 4.18z"/></svg></div>
       <div class="cert-name">TOEIC English Test</div>
       <div class="cert-year">Score 650 · 2024</div>
       <div class="cert-hint">Click to view →</div>
     </div>
     <div class="cert-card reveal" style="transition-delay:0.08s" data-cert="1">
-      <div class="cert-icon">
-        <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm7 14l6-6-1.4-1.4L12 14.2l-2.6-2.6L8 13l4 4z"/></svg>
-      </div>
+      <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zm7 14l6-6-1.4-1.4L12 14.2l-2.6-2.6L8 13l4 4z"/></svg></div>
       <div class="cert-name">Mandarin HSK 1</div>
       <div class="cert-year">A1 TOCFL Level</div>
       <div class="cert-hint">Click to view →</div>
     </div>
     <div class="cert-card reveal" style="transition-delay:0.16s" data-cert="2">
-      <div class="cert-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
-      </div>
+      <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div>
       <div class="cert-name">SQL Advanced</div>
       <div class="cert-year">HackerRank · 2024</div>
       <div class="cert-hint">Click to view →</div>
     </div>
     <div class="cert-card reveal" style="transition-delay:0.24s" data-cert="3">
-      <div class="cert-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg>
-      </div>
+      <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/></svg></div>
       <div class="cert-name">SQL Intermediate</div>
       <div class="cert-year">HackerRank · 2024</div>
       <div class="cert-hint">Click to view →</div>
@@ -1039,7 +942,7 @@
   </div>
 </section>
 
-<!-- Certificate Modal -->
+<!-- Certificate PDF Modal -->
 <div class="cert-modal-backdrop" id="certModal">
   <div class="cert-modal" id="certModalContent">
     <div class="cert-modal-header">
@@ -1051,11 +954,8 @@
         <svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
       </button>
     </div>
-
-    <!-- PDF Viewer Area -->
-    <div class="cert-modal-pdf-wrap" id="modalPdfWrap">
+    <div class="cert-modal-pdf-wrap is-loading" id="modalPdfWrap">
       <iframe id="modalPdfIframe" title="Certificate PDF"></iframe>
-      <!-- Fallback shown when iframe can't load PDF -->
       <div class="cert-modal-pdf-fallback" id="modalPdfFallback">
         <svg viewBox="0 0 24 24">
           <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
@@ -1064,9 +964,9 @@
           <line x1="16" y1="17" x2="8" y2="17"/>
           <polyline points="10 9 9 9 8 9"/>
         </svg>
-        <p>PDF preview is not available in this browser. You can download the certificate to view it.</p>
+        <p>PDF preview is not available in this browser.</p>
         <a id="modalPdfFallbackLink" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none">
+          <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
             <line x1="12" y1="15" x2="12" y2="3"/>
@@ -1075,7 +975,6 @@
         </a>
       </div>
     </div>
-
     <div class="cert-modal-footer">
       <div class="cert-modal-meta">
         <span class="cert-modal-meta-label">Issued by</span>
@@ -1134,113 +1033,193 @@
   </div>
 </section>
 
-<footer>
-  © 2026 Muhammad Ahsan Nasrulloh — Subang, West Java
-</footer>
+<footer>© 2026 Muhammad Ahsan Nasrulloh — Subang, West Java</footer>
 
 <script>
-  /* ==========================================
-     Certificate data — ubah path PDF di sini
-     ========================================== */
+  /* ==========================================================
+     CERTIFICATE DATA
+     ─────────────────
+     • pdf       → path ke file PDF (taruh di folder yang sama)
+     • ratio     → lebar/tinggi PDF asli (cara mengukur: buka
+                   PDF, lihat Page Size di properti file.
+                   Contoh: A4 Landscape = 297/210 ≈ 1.414
+                           A4 Portrait  = 210/297 ≈ 0.707
+                           HackerRank   ≈ 1200/628 ≈ 1.91)
+     ========================================================== */
   const certData = [
     {
       title: 'TOEIC English Test',
       subtitle: 'Score 650 · 2024',
       issuer: 'TOEIC English Test',
       badge: 'Verified',
-      pdf: './TOIEC_M.AHSAN NASRULLOH001.pdf'
+      pdf: './TOIEC_M.AHSAN NASRULLOH001.pdf',
+      ratio: 1.91
     },
     {
       title: 'Mandarin HSK 1',
       subtitle: 'A1 TOCFL Level',
       issuer: 'Mandarin HSK Test',
       badge: 'Verified',
-      pdf: './SERTIFIKATJUARA_1UMUM_M.AHSAN NASRULLOH001.pdf'
+      pdf: './SERTIFIKATJUARA_1UMUM_M.AHSAN NASRULLOH001.pdf',
+      ratio: 1.91
     },
     {
       title: 'SQL Advanced',
       subtitle: 'HackerRank · 2024',
       issuer: 'HackerRank',
       badge: 'Verified',
-      pdf: './sql_advancedcertificate.pdf'
+      pdf: './sql_advancedcertificate.pdf',
+      ratio: 1.91
     },
     {
       title: 'SQL Intermediate',
       subtitle: 'HackerRank · 2024',
       issuer: 'HackerRank',
       badge: 'Verified',
-      pdf: './sql_intermediatecertificate.pdf'
+      pdf: './sql_intermediatecertificate.pdf',
+      ratio: 1.91
     }
   ];
 
-  /* ==========================================
-     Modal logic
-     ========================================== */
-  const modalBackdrop   = document.getElementById('certModal');
-  const modalContent    = document.getElementById('certModalContent');
-  const modalTitle      = document.getElementById('modalTitle');
-  const modalSubtitle   = document.getElementById('modalSubtitle');
-  const modalIssuer     = document.getElementById('modalIssuer');
-  const modalBadge      = document.getElementById('modalBadge');
-  const modalCloseBtn   = document.getElementById('certModalClose');
-  const modalPdfIframe  = document.getElementById('modalPdfIframe');
-  const modalPdfWrap    = document.getElementById('modalPdfWrap');
-  const modalPdfFallback= document.getElementById('modalPdfFallback');
+  /* ==========================================================
+     DOM REFERENCES
+     ========================================================== */
+  const modalBackdrop    = document.getElementById('certModal');
+  const modalContent     = document.getElementById('certModalContent');
+  const modalTitle       = document.getElementById('modalTitle');
+  const modalSubtitle    = document.getElementById('modalSubtitle');
+  const modalIssuer      = document.getElementById('modalIssuer');
+  const modalBadge       = document.getElementById('modalBadge');
+  const modalCloseBtn    = document.getElementById('certModalClose');
+  const modalPdfIframe   = document.getElementById('modalPdfIframe');
+  const modalPdfWrap     = document.getElementById('modalPdfWrap');
+  const modalPdfFallback = document.getElementById('modalPdfFallback');
   const modalFallbackLink = document.getElementById('modalPdfFallbackLink');
   const modalDownloadLink = document.getElementById('modalDownloadLink');
-  let modalOpen = false;
-  let iframeTimeout = null;
 
+  let modalOpen = false;
+  let currentCertIdx = -1;
+  let fallbackTimer = null;
+
+  /* ==========================================================
+     SIZE CALCULATION — modal pas dengan rasio PDF
+     ========================================================== */
+  function calcModalSize(ratio) {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const isMobile = vw <= 768;
+
+    if (isMobile) {
+      // Mobile: full width, height mengikuti konten + scrollable
+      return { w: vw, strategy: 'mobile' };
+    }
+
+    // Desktop: ukurkan modal agar pas dengan rasio PDF
+    const headerH  = 58;   // approximate header height
+    const footerH  = 54;   // approximate footer height
+    const gapH     = 0;
+    const padX     = 48;   // backdrop padding total
+    const padY     = 48;
+
+    const availW = vw - padX;
+    const availH = vh - padY - headerH - footerH - gapH;
+    const maxW   = 840;    // max modal width on desktop
+
+    let pdfW = Math.min(availW, maxW);
+    let pdfH = pdfW / ratio;
+
+    // Kalau tinggi PDF melebihi layar, kurangi lebar
+    if (pdfH > availH) {
+      pdfH = availH;
+      pdfW = pdfH * ratio;
+    }
+
+    // Pastikan tidak terlalu kecil
+    pdfW = Math.max(pdfW, 300);
+    pdfH = Math.max(pdfH, 200);
+
+    return { w: Math.round(pdfW), h: Math.round(pdfH), strategy: 'desktop' };
+  }
+
+  function applyModalSize(ratio) {
+    const size = calcModalSize(ratio);
+
+    // Reset semua inline styles
+    modalContent.style.width       = '';
+    modalContent.style.maxHeight   = '';
+    modalContent.style.overflowY   = '';
+    modalPdfWrap.style.aspectRatio  = '';
+    modalPdfWrap.style.height      = '';
+    modalPdfWrap.style.minHeight   = '';
+
+    if (size.strategy === 'mobile') {
+      modalContent.style.width     = size.w + 'px';
+      modalContent.style.maxHeight = '96vh';
+      modalContent.style.overflowY = 'auto';
+      // aspect-ratio di-override CSS media query jadi unset
+    } else {
+      modalContent.style.width    = size.w + 'px';
+      modalContent.style.overflow = 'hidden';
+      modalPdfWrap.style.aspectRatio = ratio;
+    }
+  }
+
+  /* ==========================================================
+     OPEN / CLOSE MODAL
+     ========================================================== */
   function openModal(index) {
     const cert = certData[index];
     if (!cert) return;
+    currentCertIdx = index;
 
+    // Set text content
     modalTitle.textContent    = cert.title;
     modalSubtitle.textContent = cert.subtitle;
     modalIssuer.textContent   = cert.issuer;
     modalBadge.textContent    = cert.badge;
 
+    // Set links
     const pdfPath = cert.pdf || '';
-
-    // Set download link (selalu tampilkan agar user bisa download)
     if (pdfPath) {
-      modalDownloadLink.href = pdfPath;
+      modalDownloadLink.href    = pdfPath;
       modalDownloadLink.style.display = '';
-      modalFallbackLink.href = pdfPath;
+      modalFallbackLink.href    = pdfPath;
     } else {
       modalDownloadLink.style.display = 'none';
     }
 
-    // Reset state
+    // Size modal to PDF ratio
+    const ratio = cert.ratio || 1.414;
+    applyModalSize(ratio);
+
+    // Reset PDF area
     modalPdfIframe.src = '';
     modalPdfFallback.classList.remove('show');
-    modalPdfIframe.style.display = 'block';
+    modalPdfWrap.classList.add('is-loading');
 
     if (pdfPath) {
-      // Coba load PDF via iframe
-      // Beberapa browser (terutama mobile) tidak bisa render PDF di iframe,
-      // jadi kita set timeout untuk menampilkan fallback.
-      modalPdfIframe.src = pdfPath;
+      // Delay sedikit biar shimmer effect terlihat, lalu load PDF
+      setTimeout(() => {
+        modalPdfIframe.src = pdfPath;
+      }, 80);
 
-      if (iframeTimeout) clearTimeout(iframeTimeout);
-      iframeTimeout = setTimeout(() => {
-        // Jika setelah 3 detik iframe masih kosong/tidak load, tampilkan fallback
-        // Ini adalah deteksi sederhana — browser yang support PDF akan sudah menampilkan isinya
-        // Kita coba akses contentDocument, jika error artinya tidak bisa load
-        try {
-          const doc = modalPdfIframe.contentDocument;
-          // Jika bisa diakses dan body kosong, berarti PDF tidak di-render sebagai embed
-          if (doc && doc.body && doc.body.innerHTML === '') {
-            showFallback();
-          }
-        } catch (e) {
-          // Cross-origin error — kemungkinan PDF sedang di-load oleh browser PDF viewer
-          // Ini sebenarnya berarti berhasil, jadi biarkan saja
+      // Hapus loading saat iframe selesai load
+      modalPdfIframe.onload = () => {
+        modalPdfWrap.classList.remove('is-loading');
+      };
+
+      // Fallback: kalau 4 detik belum load juga, tampilkan download link
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      fallbackTimer = setTimeout(() => {
+        if (modalPdfWrap.classList.contains('is-loading')) {
+          modalPdfWrap.classList.remove('is-loading');
+          showFallback(pdfPath);
         }
-      }, 3000);
+      }, 4000);
     } else {
-      // Tidak ada PDF — tampilkan placeholder
-      showFallback();
+      // Tidak ada PDF
+      modalPdfWrap.classList.remove('is-loading');
+      showFallback(null);
     }
 
     modalOpen = true;
@@ -1248,16 +1227,15 @@
     document.body.classList.add('modal-open');
   }
 
-  function showFallback() {
+  function showFallback(pdfPath) {
     modalPdfIframe.style.display = 'none';
-    if (!certData.some(c => c.pdf)) {
-      // Jika tidak ada PDF sama sekali, ubah teks fallback
+    if (!pdfPath) {
       modalPdfFallback.querySelector('p').textContent =
         'No certificate file has been added yet.';
       modalFallbackLink.style.display = 'none';
     } else {
       modalPdfFallback.querySelector('p').textContent =
-        'PDF preview is not available in this browser. You can download the certificate to view it.';
+        'PDF preview is not available in this browser.';
       modalFallbackLink.style.display = '';
     }
     modalPdfFallback.classList.add('show');
@@ -1266,19 +1244,26 @@
   function closeModal() {
     if (!modalOpen) return;
     modalOpen = false;
+    currentCertIdx = -1;
     modalBackdrop.classList.remove('open');
     document.body.classList.remove('modal-open');
-    // Bersihkan iframe setelah animasi selesai
+    if (fallbackTimer) clearTimeout(fallbackTimer);
+
+    // Bersihkan iframe setelah animasi tutup selesai
     setTimeout(() => {
       modalPdfIframe.src = '';
-    }, 400);
-    if (iframeTimeout) clearTimeout(iframeTimeout);
+      modalPdfIframe.style.display = '';
+      modalPdfFallback.classList.remove('show');
+      modalPdfWrap.classList.remove('is-loading');
+    }, 450);
   }
 
+  /* ==========================================================
+     EVENT LISTENERS — modal
+     ========================================================== */
   document.querySelectorAll('.cert-card').forEach((card) => {
     card.addEventListener('click', () => {
-      const idx = parseInt(card.getAttribute('data-cert'), 10);
-      openModal(idx);
+      openModal(parseInt(card.getAttribute('data-cert'), 10));
     });
   });
 
@@ -1290,9 +1275,20 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  /* ==========================================
-     Scroll reveal
-     ========================================== */
+  // Re-calculate ukuran modal kalau layar di-resize saat modal terbuka
+  let resizeRaf = null;
+  window.addEventListener('resize', () => {
+    if (!modalOpen || currentCertIdx < 0) return;
+    if (resizeRaf) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => {
+      const cert = certData[currentCertIdx];
+      if (cert) applyModalSize(cert.ratio || 1.414);
+    });
+  });
+
+  /* ==========================================================
+     SCROLL REVEAL
+     ========================================================== */
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
@@ -1304,9 +1300,9 @@
   }, { threshold: 0.12 });
   reveals.forEach((el) => obs.observe(el));
 
-  /* ==========================================
-     Nav shadow on scroll
-     ========================================== */
+  /* ==========================================================
+     NAV SHADOW ON SCROLL
+     ========================================================== */
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 30
@@ -1314,9 +1310,9 @@
       : 'none';
   });
 
-  /* ==========================================
-     Mobile menu
-     ========================================== */
+  /* ==========================================================
+     MOBILE MENU
+     ========================================================== */
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mmLinks    = mobileMenu.querySelectorAll('.mm-link');
@@ -1328,7 +1324,6 @@
     mobileMenu.classList.toggle('open', menuOpen);
     document.body.classList.toggle('menu-open', menuOpen);
   }
-
   function closeMenu() {
     if (!menuOpen) return;
     menuOpen = false;
@@ -1338,7 +1333,7 @@
   }
 
   hamburger.addEventListener('click', toggleMenu);
-  mmLinks.forEach((link) => link.addEventListener('click', closeMenu));
+  mmLinks.forEach((l) => l.addEventListener('click', closeMenu));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
 </script>
